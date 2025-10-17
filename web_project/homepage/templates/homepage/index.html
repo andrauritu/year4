@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Information</h1>
+        
+        {% if personal_info %}
+            <p><strong>First Name:</strong> {{ personal_info.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ personal_info.last_name }}</p>
+            <p><strong>Group:</strong> {{ personal_info.group }}</p>
+            <p><strong>Project Title:</strong> {{ personal_info.your_project_title }}</p>
+            <p><strong>Project Colleagues:</strong> {{ personal_info.your_colleagues_for_the_project }}</p>
+            <p><strong>Email:</strong> {{ personal_info.email }}</p>
+            <p><strong>Phone:</strong> {{ personal_info.phone }}</p>
+        {% else %}
+            <p>No personal information found. Please add your information through the admin panel.</p>
+            <p><a href="/admin/">Go to Admin Panel</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
